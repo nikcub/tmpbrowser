@@ -18,7 +18,7 @@ set supportedBrowsers to {Â
 
 set browserFlags to {Â
 	{"chrome", "--enable-strict-site-isolation --site-per-process --no-default-browser-check --no-first-run --disable-default-apps", "--disable-plugins", "--user-data-dir="}, Â
-	{"ff", "-browser -no-remote -CreateProfile tmpbrowser", "-safe-mode", "-profile "} Â
+	{"ff", "-url about:home -silent -no-remote", "-safe-mode", "-profile "} Â
 		}
 
 # other variables used throughout script
@@ -107,7 +107,6 @@ set cmd_string to cmd_string & " " & dataDirCmd & " " & shell_pipe
 try
 	#display dialog cmd_string
 	do shell script cmd_string
-	# do shell script "\"" & run_cl & "\"" & chrome_flags & chrome_flags_noplugin & " --user-data-dir=\"`mktemp -d -t tmpbrowser XXXXX`\" "
 on error errMsg number errorNumber
 	Exception("Exec Error:" & (errorNumber as text) & errMsg as text)
 end try
