@@ -85,8 +85,11 @@ end if
 
 # Get a temporary directory for the profile
 try
-	set tmpDir to do shell script "mktemp -d -t tmpbrowser XXXXX"
-	set dataDirCmd to selectedBrowserDatadir & "\"" & tmpDir & "\""
+	# set tmpDir to do shell script "mktemp -d -t tmpbrowser XXXXX"
+	# set tmpDir to path to temporary items as text
+	# set tmpDir to POSIX path of tmpDir
+	set tmpDir to do shell script "mktemp -d /tmp/tmpbrowser.XXXXXXX"
+	set dataDirCmd to selectedBrowserDatadir & "=\"" & tmpDir & "\""
 on error errMsg number errorNumber
 	Exception("Problem creating temporary directory")
 end try
@@ -96,10 +99,11 @@ set cmd_string to "" & selectedBrowserCmd & " " & selectedBrowserFlags
 if userLoadPlugins is "No" then
 	set cmd_string to cmd_string & " " & selectedBrowserFlagsPlugins
 end if
-set cmd_string to cmd_string & dataDirCmd
+set cmd_string to cmd_string & " " & dataDirCmd
 
 # Run
 try
+	#display dialog cmd_string
 	do shell script cmd_string
 	# do shell script "\"" & run_cl & "\"" & chrome_flags & chrome_flags_noplugin & " --user-data-dir=\"`mktemp -d -t tmpbrowser XXXXX`\" "
 on error errMsg number errorNumber
