@@ -54,7 +54,8 @@ choose from list foundBrowsersDialogList default items foundBrowserDefault with 
 if the result is not false then
 	set selectedBrowserNiceName to item 1 of the result
 else
-	Exception("Bad browser selection")
+	error number -128
+	return
 end if
 
 # now we have to iterate through again since the result of the dialog is a nice_name not an index
