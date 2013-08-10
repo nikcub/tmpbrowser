@@ -1,7 +1,17 @@
 ## tmpbrowser
 
-Will load a temporary throwaway browser session. Supports Chrome,
-Chromium, Firefox and Opera.
+Creates a temporary throwaway browser session. 
+
+Click the icon to create as many sessions as you like.
+
+Supports Chrome, Chromium, Firefox and Opera.
+
+## Benefits
+
+ * User profile is destroyed so no saved history or passwords, etc.
+ * Works like incognito mode except you get all the benefits of browser
+   session
+ * Ability to disable plugins and extensions on a per-execution basis
 
 ## Install
 
