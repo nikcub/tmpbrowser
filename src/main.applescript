@@ -13,6 +13,7 @@
 set supportedBrowsers to {Â
 	{"Google Chrome", "chrome", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}, Â
 	{"Google Chrome Canary", "chrome", "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"}, Â
+	{"Chromium", "chrome", "/Applications/Chromium.app/Contents/MacOS/Chromium"}, Â
 	{"Firefox", "ff", "/Applications/Firefox.app/Contents/MacOS/firefox"} Â
 		}
 
