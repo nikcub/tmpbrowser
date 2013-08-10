@@ -25,10 +25,10 @@ set browserFlags to {Â
 	{"opera", "-nomail -csp ", "", "-pd "} Â
 		}
 
-set unsupportedBrowsers to { Â
+set unsupportedBrowsers to {Â
 	{"Safari", "webkit", "/Applications/Safari.app/Contents/MacOS/Safari"}, Â
 	{"Webkit", "webkit", "/Applications/Safari.app/Contents/MacOS/WebKit"} Â
-}
+		}
 
 # other variables used throughout script
 set foundBrowsers to {}
@@ -76,9 +76,6 @@ repeat with i from 1 to length of foundBrowsers
 	end if
 end repeat
 
-# prompt if we should load plugins or not
-set userLoadPlugins to display dialog "Load browser plugins?" buttons {"Yes", "No"} default button "Yes"
-
 # find the flags
 repeat with i from 1 to length of browserFlags
 	set currentItem to item i of browserFlags
@@ -93,6 +90,13 @@ end repeat
 
 if foundFlags is 0 then
 	Exception("Could not set browser flags")
+end if
+
+# prompt if we should load plugins or not
+if selectedBrowserFlagsPlugins is not "" then
+	set userLoadPlugins to display dialog "Load browser plugins?" buttons {"Yes", "No"} default button "Yes"
+else
+	set userLoadPlugins to "Yes"
 end if
 
 # Get a temporary directory for the profile
