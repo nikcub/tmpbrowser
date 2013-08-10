@@ -44,3 +44,11 @@ will be automatically detroyed.
 
 Click the `tmpbrowser` icon as many times as you like to create as many
 browser session as you want.
+
+## Todo
+
+ * Support Safari and Webkit by finding a way to set a custom profile
+   path
+ * Disable nag box on setting browser as default for Firefox and Opera
+ * Give the project an icon
+
