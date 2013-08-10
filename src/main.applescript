@@ -1,6 +1,13 @@
+# tmpbrowser
+#
+# http://github.com/nikcub/tmpbrowser
+#
+# MIT License - see LICENSE file.
+# Copyright © 2013 Nik Cubrilovic
+
 #
 # supportedBrowsers array format is {browser_nice_name, brower_type, browser_cmd_path}
-# browserFlags list format is {browser_nice_name, cmd_flags, cmd_no_plugins_flags}
+# browserFlags list format is {browser_nice_name, cmd_flags, cmd_no_plugins_flags, user_data_flag}
 #
 
 set supportedBrowsers to {Â
@@ -9,7 +16,7 @@ set supportedBrowsers to {Â
 		}
 
 set browserFlags to {Â
-	{"chrome", "--enable-strict-site-isolation --site-per-process --no-default-browser-check --no-first-run --disable-default-apps", "--disable-plugins"} Â
+	{"chrome", "--enable-strict-site-isolation --site-per-process --no-default-browser-check --no-first-run --disable-default-apps", "--disable-plugins", "--user-data-dir"} Â
 		}
 
 # other variables used throughout script
@@ -35,11 +42,11 @@ repeat with i from 1 to length of supportedBrowsers
 	end if
 end repeat
 
-
 if length of foundBrowsers is 0 then
 	Exception("No supported browsers found")
 end if
 
+# Prompt user to select a browser
 choose from list foundBrowsersDialogList default items foundBrowserDefault with title "Select a browser:"
 if the result is not false then
 	set selectedBrowserNiceName to item 1 of the result
@@ -67,6 +74,7 @@ repeat with i from 1 to length of browserFlags
 		set foundFlags to 1
 		set selectedBrowserFlags to item 2 of currentItem
 		set selectedBrowserFlagsPlugins to item 3 of currentItem
+		set selectedBrowserDatadir to item 4 of currentItem
 		exit repeat
 	end if
 end repeat
@@ -75,18 +83,30 @@ if foundFlags is 0 then
 	Exception("Could not set browser flags")
 end if
 
-# run
+# Get a temporary directory for the profile
+try
+	set tmpDir to do shell script "mktemp -d -t tmpbrowser XXXXX"
+	set dataDirCmd to selectedBrowserDatadir & "\"" & tmpDir & "\""
+on error errMsg number errorNumber
+	Exception("Problem creating temporary directory")
+end try
+
+# Build the command string
 set cmd_string to "" & selectedBrowserCmd & " " & selectedBrowserFlags
 if userLoadPlugins is "No" then
 	set cmd_string to cmd_string & " " & selectedBrowserFlagsPlugins
 end if
+set cmd_string to cmd_string & dataDirCmd
 
+# Run
 try
 	do shell script cmd_string
 	# do shell script "\"" & run_cl & "\"" & chrome_flags & chrome_flags_noplugin & " --user-data-dir=\"`mktemp -d -t tmpbrowser XXXXX`\" "
 on error errMsg number errorNumber
 	Exception("Exec Error:" & (errorNumber as text) & errMsg as text)
 end try
+
+# Functions -------------
 
 on Exception(msg)
 	# display alert "Error" message msg as critical
@@ -104,5 +124,3 @@ on FileExists(theFile) -- (String) as Boolean
 		end if
 	end tell
 end FileExists
-
-
