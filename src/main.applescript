@@ -25,6 +25,11 @@ set browserFlags to {Â
 	{"opera", "-nomail -csp ", "", "-pd "} Â
 		}
 
+set unsupportedBrowsers to { Â
+	{"Safari", "webkit", "/Applications/Safari.app/Contents/MacOS/Safari"}, Â
+	{"Webkit", "webkit", "/Applications/Safari.app/Contents/MacOS/WebKit"} Â
+}
+
 # other variables used throughout script
 set foundBrowsers to {}
 set foundBrowsersDialogList to {}
