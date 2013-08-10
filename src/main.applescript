@@ -14,12 +14,15 @@ set supportedBrowsers to {Â
 	{"Google Chrome", "chrome", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}, Â
 	{"Google Chrome Canary", "chrome", "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"}, Â
 	{"Chromium", "chrome", "/Applications/Chromium.app/Contents/MacOS/Chromium"}, Â
-	{"Firefox", "ff", "/Applications/Firefox.app/Contents/MacOS/firefox"} Â
+	{"Firefox", "ff", "/Applications/Firefox.app/Contents/MacOS/firefox"}, Â
+	{"Opera", "opera", "/Applications/Opera.app/Contents/MacOS/Opera"} Â
 		}
 
 set browserFlags to {Â
 	{"chrome", "--enable-strict-site-isolation --site-per-process --no-default-browser-check --no-first-run --disable-default-apps", "--disable-plugins", "--user-data-dir="}, Â
-	{"ff", "-url about:home -silent -no-remote", "-safe-mode", "-profile "} Â
+	{"ff", "-url about:home -silent -no-remote", "-safe-mode", "-profile "}, Â
+	{"webkit", "", "", "--data-path "}, Â
+	{"opera", "-nomail -csp ", "", "-pd "} Â
 		}
 
 # other variables used throughout script
