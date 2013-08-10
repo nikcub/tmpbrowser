@@ -12,11 +12,13 @@
 
 set supportedBrowsers to {Â
 	{"Google Chrome", "chrome", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}, Â
-	{"Google Chrome Canary", "chrome", "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"} Â
+	{"Google Chrome Canary", "chrome", "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"}, Â
+	{"Firefox", "ff", "/Applications/Firefox.app/Contents/MacOS/firefox"} Â
 		}
 
 set browserFlags to {Â
-	{"chrome", "--enable-strict-site-isolation --site-per-process --no-default-browser-check --no-first-run --disable-default-apps", "--disable-plugins", "--user-data-dir"} Â
+	{"chrome", "--enable-strict-site-isolation --site-per-process --no-default-browser-check --no-first-run --disable-default-apps", "--disable-plugins", "--user-data-dir="}, Â
+	{"ff", "-browser -no-remote -CreateProfile tmpbrowser", "-safe-mode", "-profile "} Â
 		}
 
 # other variables used throughout script
@@ -89,7 +91,7 @@ try
 	# set tmpDir to path to temporary items as text
 	# set tmpDir to POSIX path of tmpDir
 	set tmpDir to do shell script "mktemp -d /tmp/tmpbrowser.XXXXXXX"
-	set dataDirCmd to selectedBrowserDatadir & "=\"" & tmpDir & "\""
+	set dataDirCmd to selectedBrowserDatadir & "\"" & tmpDir & "\""
 on error errMsg number errorNumber
 	Exception("Problem creating temporary directory")
 end try
@@ -99,7 +101,7 @@ set cmd_string to "" & selectedBrowserCmd & " " & selectedBrowserFlags
 if userLoadPlugins is "No" then
 	set cmd_string to cmd_string & " " & selectedBrowserFlagsPlugins
 end if
-set cmd_string to cmd_string & " " & dataDirCmd
+set cmd_string to cmd_string & " " & dataDirCmd & " " & shell_pipe
 
 # Run
 try
