@@ -1,4 +1,6 @@
+APPNAME="tmpbrowser"
 OSC=$(shell which osacompile)
+HD=$(shell which hdiutil)
 
 build:
 	@echo "Building .."
@@ -9,9 +11,15 @@ clean:
 	rm -rf build/*
 	rm -rf dist/*
 
-dist:
+zipdist:
 	@echo "Zipppp.."
 	zip -r dist/tmpbrowser.zip build/tmpbrowser.app
+
+dist:
+	@mkdir dist
+	@ln -s /Applications/ build/Applications
+	echo "Building disk image.."
+	hdiutil create -ov -srcfolder build -volname ${APPNAME} dist/${APPNAME}.dmg
 
 all: clean build dist
 
