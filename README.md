@@ -16,10 +16,10 @@ Supports Chrome, Chromium, Firefox and Opera.
 
 ## Install
 
- 1. Download the [zip
-    file](https://github.com/nikcub/tmpbrowser/blob/master/dist/tmpbrowser.zip?raw=true)
- 1. Double-click open the zip file and then drag-and-drop the tmpbrowser app into your Applications folder
- 1. Run
+ 1. [Download the latest
+    version](https://github.com/nikcub/tmpbrowser/blob/master/dist/tmpbrowser.dmg?raw=true)
+ 1. Mount the installer by double clicking on the file you downloaded
+ 1. When the image opens, drag the `tmpbrowser` application icon into the Applications folder
 
 ## Running
 
