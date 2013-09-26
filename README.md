@@ -1,13 +1,14 @@
 ## tmpbrowser
 
-Creates a temporary throwaway browser session. 
+Creates a temporary throwaway browser session in OS X. 
 
-Click the icon to create as many sessions as you like.
+Click the application icon to create as many sessions as you like.
 
 Supports Chrome, Chromium, Firefox and Opera.
 
 ## Benefits
 
+ * Run a separate set of cookies for enhanced privacy.
  * User profile is destroyed so no saved history or passwords, etc.
  * Works like incognito mode except you get all the benefits of browser
    session
@@ -17,7 +18,7 @@ Supports Chrome, Chromium, Firefox and Opera.
 
  1. Download the [zip
     file](https://github.com/nikcub/tmpbrowser/blob/master/dist/tmpbrowser.zip?raw=true)
- 1. Double-click and drop the tmpbrowser app into your Applications folder
+ 1. Double-click open the zip file and then drag-and-drop the tmpbrowser app into your Applications folder
  1. Run
 
 ## Running
@@ -45,10 +46,15 @@ will be automatically detroyed.
 Click the `tmpbrowser` icon as many times as you like to create as many
 browser session as you want.
 
+## How it works
+
+It works by creating a temporary folder on your drive and storing a temporary profile there. It starts up the browser using the command line and tells it to use the temporary folder location for the profile.
+
 ## Todo
 
  * Support Safari and Webkit by finding a way to set a custom profile
    path
  * Disable nag box on setting browser as default for Firefox and Opera
  * Give the project an icon
+ * Create a similar Windows version
 
