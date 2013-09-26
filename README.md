@@ -21,6 +21,8 @@ Supports Chrome, Chromium, Firefox and Opera.
  1. Mount the installer by double clicking on the file you downloaded
  1. When the image opens, drag the `tmpbrowser` application icon into the Applications folder
 
+![Install](http://i.imgur.com/AF0h8lU.png)
+
 ## Running
 
 ### 1. Pick a Browser
