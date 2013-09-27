@@ -1,6 +1,8 @@
 ## tmpbrowser
 
-Creates a temporary throwaway browser session in OS X. 
+Creates a temporary throwaway browser session in OS X. Like incognito mode but stores and accepts all cookies so all websites will work, is anonymous and will destory all the sessions and cookies automatically when you exit. 
+
+Use if you want to separate your cookies for your real logged in accounts from websites you access. Provides privacy from tracking cookies, ad networks, single signon, oAuth and OpenID logins, etc.
 
 Click the application icon to create as many sessions as you like.
 
@@ -20,25 +22,31 @@ Supports Chrome, Chromium, Firefox and Opera.
     version](https://github.com/nikcub/tmpbrowser/blob/master/dist/tmpbrowser.dmg?raw=true)
  1. Mount the installer by double clicking on the file you downloaded
  1. When the image opens, drag the `tmpbrowser` application icon into the Applications folder
-
 ![Install](http://i.imgur.com/AF0h8lU.png)
+ 1. (Optional) Drag the application icon from `Applications` to your Dock
 
 ## Running
 
-### 1. Pick a Browser
+### 1. Run the application
+
+From your install the applicaiton icon is either in your Dock or in the Applications folder
+ 1. Run from your Dock or from the Applications folder (shortcut c`ommand + option + a`)
+ ![Run](http://i.imgur.com/BPoyOEh.png)
+
+### 2. Pick a Browser
 
 First step is to select a supported browser
 
 ![Step 1](http://i.imgur.com/Xq6eirw.png)
 
-### 2. Enable Plugins?
+### 3. Enable Plugins?
 
 Select if you wish plugins and extensions to be loaded (no supported in
 Opera)
 
 ![Step 2](http://i.imgur.com/rT51Plb.png)
 
-### 3. Presto!
+### 4. Presto!
 
 You now have a new running temporary browser process and a session that
 will be automatically detroyed. 
@@ -60,3 +68,16 @@ It works by creating a temporary folder on your drive and storing a temporary pr
  * Give the project an icon
  * Create a similar Windows version
 
+
+## Changelog
+
+### v0.0.3 - 27th September 2013
+
+ * Disk image based install for easy drag+drop
+ * Updates to README with screenshots of install and run
+
+ ### v0.0.2 - 12th September 2013
+
+ * Auto detect installed browsers
+
+ 
