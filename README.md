@@ -79,7 +79,7 @@ It works by creating a temporary folder on your drive and storing a temporary pr
  * Disk image based install for easy drag+drop
  * Updates to README with screenshots of install and run
 
- ### v0.0.2 - 12th September 2013
+### v0.0.2 - 12th September 2013
 
  * Auto detect installed browsers
 
