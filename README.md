@@ -1,7 +1,7 @@
 ## tmpbrowser
 
--> ![Temporary Chrome](http://i.imgur.com/8v4rOSV.png) <-
--> *Demonstration with temporary Chrome session <-
+ ![Temporary Chrome](http://i.imgur.com/8v4rOSV.png) 
+ **Demonstration with temporary Chrome session** 
 
 Creates a temporary throwaway browser session in OS X. Like incognito mode but stores and accepts all cookies so all websites will work, is anonymous and will destory all the sessions and cookies automatically when you exit. 
 
