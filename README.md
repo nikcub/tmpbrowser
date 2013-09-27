@@ -1,5 +1,8 @@
 ## tmpbrowser
 
+-> ![Temporary Chrome](http://i.imgur.com/8v4rOSV.png) <-
+-> *Demonstration with temporary Chrome session <-
+
 Creates a temporary throwaway browser session in OS X. Like incognito mode but stores and accepts all cookies so all websites will work, is anonymous and will destory all the sessions and cookies automatically when you exit. 
 
 Use if you want to separate your cookies for your real logged in accounts from websites you access. Provides privacy from tracking cookies, ad networks, single signon, oAuth and OpenID logins, etc.
@@ -80,4 +83,3 @@ It works by creating a temporary folder on your drive and storing a temporary pr
 
  * Auto detect installed browsers
 
- 
