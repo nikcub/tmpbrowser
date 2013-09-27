@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="tmpbrowser : Create throwaway browser sessions on OS X using your existing browsers." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>tmpbrowser</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nikcub/tmpbrowser">View on GitHub</a>
+
+          <h1 id="project_title">tmpbrowser</h1>
+          <h2 id="project_tagline">Create throwaway browser sessions on OS X using your existing browsers.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/nikcub/tmpbrowser/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/nikcub/tmpbrowser/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="tmpbrowser" class="anchor" href="#tmpbrowser"><span class="octicon octicon-link"></span></a>tmpbrowser</h2>
+
+<p><img src="http://i.imgur.com/8v4rOSV.png" alt="Temporary Chrome"><strong>Demonstration with temporary Chrome session</strong> </p>
+
+<p>Creates a temporary throwaway browser session in OS X. Like incognito mode but stores and accepts all cookies so all websites will work, is anonymous and will destory all the sessions and cookies automatically when you exit. </p>
+
+<p>Use if you want to separate your cookies for your real logged in accounts from websites you access. Provides privacy from tracking cookies, ad networks, single signon, oAuth and OpenID logins, etc.</p>
+
+<p>Click the application icon to create as many sessions as you like.</p>
+
+<p>Supports Chrome, Chromium, Firefox and Opera.</p>
+
+<h2>
+<a name="benefits" class="anchor" href="#benefits"><span class="octicon octicon-link"></span></a>Benefits</h2>
+
+<ul>
+<li>Run a separate set of cookies for enhanced privacy.</li>
+<li>User profile is destroyed so no saved history or passwords, etc.</li>
+<li>Works like incognito mode except you get all the benefits of browser
+session</li>
+<li>Ability to disable plugins and extensions on a per-execution basis</li>
+</ul><h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<ol>
+<li><a href="https://github.com/nikcub/tmpbrowser/blob/master/dist/tmpbrowser.dmg?raw=true">Download the latest
+version</a></li>
+<li>Mount the installer by double clicking on the file you downloaded</li>
+<li>When the image opens, drag the <code>tmpbrowser</code> application icon into the Applications folder
+<img src="http://i.imgur.com/AF0h8lU.png" alt="Install">
+</li>
+<li>(Optional) Drag the application icon from <code>Applications</code> to your Dock</li>
+</ol><h2>
+<a name="running" class="anchor" href="#running"><span class="octicon octicon-link"></span></a>Running</h2>
+
+<h3>
+<a name="1-run-the-application" class="anchor" href="#1-run-the-application"><span class="octicon octicon-link"></span></a>1. Run the application</h3>
+
+<p>From your install the applicaiton icon is either in your Dock or in the Applications folder</p>
+
+<ol>
+<li>Run from your Dock or from the Applications folder (shortcut c<code>ommand + option + a</code>)
+<img src="http://i.imgur.com/BPoyOEh.png" alt="Run">
+</li>
+</ol><h3>
+<a name="2-pick-a-browser" class="anchor" href="#2-pick-a-browser"><span class="octicon octicon-link"></span></a>2. Pick a Browser</h3>
+
+<p>First step is to select a supported browser</p>
+
+<p><img src="http://i.imgur.com/Xq6eirw.png" alt="Step 1"></p>
+
+<h3>
+<a name="3-enable-plugins" class="anchor" href="#3-enable-plugins"><span class="octicon octicon-link"></span></a>3. Enable Plugins?</h3>
+
+<p>Select if you wish plugins and extensions to be loaded (no supported in
+Opera)</p>
+
+<p><img src="http://i.imgur.com/rT51Plb.png" alt="Step 2"></p>
+
+<h3>
+<a name="4-presto" class="anchor" href="#4-presto"><span class="octicon octicon-link"></span></a>4. Presto!</h3>
+
+<p>You now have a new running temporary browser process and a session that
+will be automatically detroyed. </p>
+
+<p><img src="http://i.imgur.com/scBndLH.png" alt="Step 3"></p>
+
+<p>Click the <code>tmpbrowser</code> icon as many times as you like to create as many
+browser session as you want.</p>
+
+<h2>
+<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How it works</h2>
+
+<p>It works by creating a temporary folder on your drive and storing a temporary profile there. It starts up the browser using the command line and tells it to use the temporary folder location for the profile.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">tmpbrowser maintained by <a href="https://github.com/nikcub">nikcub</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
